@@ -1,8 +1,29 @@
 {
-    "server-component": {
-        "welcome": "Bienvenido"
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "projects": "Proyectos",
+        "blog": "Blog"
     },
-    "client-component": {
-        "text": "¿Qué tal?"
+    "theme": {
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+    },
+    "home": {
+        "title": "Bienvenido a Mi Portafolio",
+        "description": "Aquí encontrarás mis proyectos, publicaciones de blog y más información sobre mí."
+    },
+    "about": {
+        "title": "Sobre Mí",
+        "description": "Soy un desarrollador apasionado con amor por crear experiencias web increíbles."
+    },
+    "projects": {
+        "title": "Mis Proyectos",
+        "description": "Echa un vistazo a algunos de los proyectos en los que he trabajado."
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Lee mis últimos pensamientos e ideas sobre tecnología y desarrollo."
     }
 }

@@ -1,4 +1,3 @@
-import ClientComponent from "@/components/client-component";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 
@@ -11,12 +10,11 @@ export default async function Home({
   const dictionary = await getDictionary(lang);
 
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
+    <div>
       <p>
         Current locale: <b>{lang}</b>
       </p>
-      <h1>{dictionary["server-component"].welcome}</h1>
-      <ClientComponent dictionary={dictionary["client-component"]} />
-    </main>
+      <h1>{dictionary.home.title}</h1>
+    </div>
   );
 }

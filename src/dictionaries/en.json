@@ -1,8 +1,29 @@
 {
-    "server-component": {
-        "welcome": "Welcome"
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "blog": "Blog"
     },
-    "client-component": {
-        "text": "What's up"
+    "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "home": {
+        "title": "Welcome to My Portfolio",
+        "description": "Here you'll find my projects, blog posts, and more about me."
+    },
+    "about": {
+        "title": "About Me",
+        "description": "I'm a passionate developer with a love for creating amazing web experiences."
+    },
+    "projects": {
+        "title": "My Projects",
+        "description": "Check out some of the projects I've worked on."
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Read my latest thoughts and insights on technology and development."
     }
 }

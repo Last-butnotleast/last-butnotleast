@@ -1,8 +1,29 @@
 {
-    "server-component": {
-        "welcome": "Willkommen"
+    "nav": {
+        "home": "Startseite",
+        "about": "Über mich",
+        "projects": "Projekte",
+        "blog": "Blog"
     },
-    "client-component": {
-        "text": "Was geht"
+    "theme": {
+        "light": "Hell",
+        "dark": "Dunkel",
+        "system": "System"
+    },
+    "home": {
+        "title": "Willkommen in meinem Portfolio",
+        "description": "Hier finden Sie meine Projekte, Blogbeiträge und mehr über mich."
+    },
+    "about": {
+        "title": "Über Mich",
+        "description": "Ich bin ein leidenschaftlicher Entwickler mit einer Vorliebe für die Erstellung erstaunlicher Web-Erfahrungen."
+    },
+    "projects": {
+        "title": "Meine Projekte",
+        "description": "Sehen Sie sich einige der Projekte an, an denen ich gearbeitet habe."
+    },
+    "blog": {
+        "title": "Blog",
+        "description": "Lesen Sie meine neuesten Gedanken und Einsichten zu Technologie und Entwicklung."
     }
 }

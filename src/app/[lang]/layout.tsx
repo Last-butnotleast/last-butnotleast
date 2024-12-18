@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
 import { i18n, Locale } from "@/i18n-config";
-import LocaleSwitcher from "@/components/locale-switcher";
+import { Navbar } from "@/components/navbar";
+import { getDictionary } from "@/get-dictionary";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +33,7 @@ export default async function RootLayout({
   params: Promise<{ lang: Locale }>;
 }>) {
   const lang = (await params).lang;
+  const dict = await getDictionary(lang);
 
   return (
     <html lang={lang} suppressHydrationWarning>
@@ -45,9 +46,10 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LocaleSwitcher />
-          <ModeToggle />
-          {children}
+          <Navbar lang={lang} dict={dict} />
+          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            {children}
+          </main>
         </ThemeProvider>
       </body>
     </html>

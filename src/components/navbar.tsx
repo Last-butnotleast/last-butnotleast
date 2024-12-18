@@ -1,0 +1,119 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { MoonIcon, SunIcon, MenuIcon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import LocaleSwitcher from "@/components/locale-switcher";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function Navbar({ lang, dict }: { lang: string; dict: any }) {
+  const pathname = usePathname();
+  const { setTheme } = useTheme();
+
+  const routes = [
+    { href: `/${lang}`, label: dict.nav.home },
+    { href: `/${lang}/about`, label: dict.nav.about },
+    { href: `/${lang}/projects`, label: dict.nav.projects },
+    { href: `/${lang}/blog`, label: dict.nav.blog },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex items-center">
+            <Link href={`/${lang}`} className="text-2xl font-bold">
+              Logo
+            </Link>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            {routes.map((route) => (
+              <Link
+                key={route.href}
+                href={route.href}
+                className={`text-sm font-medium transition-colors hover:text-primary ${
+                  pathname === route.href
+                    ? "text-primary"
+                    : "text-muted-foreground"
+                }`}
+              >
+                {route.label}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex items-center space-x-4">
+            <LocaleSwitcher />
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon" className="h-9 w-9">
+                  <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme("light")}>
+                  {dict.theme.light}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>
+                  {dict.theme.dark}
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>
+                  {dict.theme.system}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-9 w-9 md:hidden"
+                >
+                  <MenuIcon className="h-5 w-5" />
+                  <span className="sr-only">Toggle menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <SheetHeader>
+                  <SheetTitle>{dict.nav.menu}</SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col space-y-4 mt-4">
+                  {routes.map((route) => (
+                    <Link
+                      key={route.href}
+                      href={route.href}
+                      className={`text-sm font-medium transition-colors hover:text-primary ${
+                        pathname === route.href
+                          ? "text-primary"
+                          : "text-muted-foreground"
+                      }`}
+                    >
+                      {route.label}
+                    </Link>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
