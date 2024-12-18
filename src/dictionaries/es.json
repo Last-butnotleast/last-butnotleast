@@ -1,5 +1,8 @@
 {
     "server-component": {
         "welcome": "Bienvenido"
+    },
+    "client-component": {
+        "text": "¿Qué tal?"
     }
 }

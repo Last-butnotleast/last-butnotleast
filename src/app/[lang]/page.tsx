@@ -1,3 +1,4 @@
+import ClientComponent from "@/components/client-component";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 
@@ -15,6 +16,7 @@ export default async function Home({
         Current locale: <b>{lang}</b>
       </p>
       <h1>{dictionary["server-component"].welcome}</h1>
+      <ClientComponent dictionary={dictionary["client-component"]} />
     </main>
   );
 }
