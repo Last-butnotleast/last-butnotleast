@@ -3,15 +3,8 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MoonIcon, SunIcon, MenuIcon } from "lucide-react";
-import { useTheme } from "next-themes";
+import { MenuIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import {
   Sheet,
   SheetContent,
@@ -20,11 +13,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import LocaleSwitcher from "@/components/locale-switcher";
+import { ModeToggle } from "./mode-toggle";
+import { Dictionary } from "@/get-dictionary";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function Navbar({ lang, dict }: { lang: string; dict: any }) {
+export function Navbar({ lang, dict }: { lang: string; dict: Dictionary }) {
   const pathname = usePathname();
-  const { setTheme } = useTheme();
 
   const routes = [
     { href: `/${lang}`, label: dict.nav.home },
@@ -59,26 +52,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: any }) {
           </nav>
           <div className="flex items-center space-x-4">
             <LocaleSwitcher />
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-9 w-9">
-                  <SunIcon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                  <MoonIcon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                  <span className="sr-only">Toggle theme</span>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setTheme("light")}>
-                  {dict.theme.light}
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")}>
-                  {dict.theme.dark}
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("system")}>
-                  {dict.theme.system}
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <ModeToggle dictionary={dict.theme} />
             <Sheet>
               <SheetTrigger asChild>
                 <Button
