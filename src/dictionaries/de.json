@@ -28,5 +28,11 @@
     "blog": {
         "title": "Blog",
         "description": "Lesen Sie meine neuesten Gedanken und Einsichten zu Technologie und Entwicklung."
+    },
+    "hero": {
+        "title": "Willkommen in meinem Portfolio",
+        "subtitle": "Ideen erforschen und digitale Lösungen gestalten",
+        "cta": "Blog lesen",
+        "secondaryCta": "Projekte ansehen"
     }
 }

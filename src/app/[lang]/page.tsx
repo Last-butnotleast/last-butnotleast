@@ -1,3 +1,4 @@
+import Hero from "@/components/hero";
 import { getDictionary } from "@/get-dictionary";
 import { Locale } from "@/i18n-config";
 
@@ -11,10 +12,7 @@ export default async function Home({
 
   return (
     <div>
-      <p>
-        Current locale: <b>{lang}</b>
-      </p>
-      <h1>{dictionary.home.title}</h1>
+      <Hero dictionary={dictionary.hero} />
     </div>
   );
 }
