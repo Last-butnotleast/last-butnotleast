@@ -3,11 +3,14 @@
         "home": "Home",
         "about": "About",
         "projects": "Projects",
-        "blog": "Blog"
+        "blog": "Blog",
+        "menu": "Navigation"
     },
     "theme": {
+        "toggle": "Toggle Theme",
         "light": "Light",
         "dark": "Dark",
+        "sexy": "Sexy",
         "system": "System"
     },
     "home": {

@@ -3,11 +3,14 @@
         "home": "Inicio",
         "about": "Sobre mí",
         "projects": "Proyectos",
-        "blog": "Blog"
+        "blog": "Blog",
+        "menu": "Navegación"
     },
     "theme": {
+        "toggle": "Cambiar Tema",
         "light": "Claro",
         "dark": "Oscuro",
+        "sexy": "Sexy",
         "system": "Sistema"
     },
     "home": {
