@@ -31,8 +31,8 @@ export function Navbar({ lang, dict }: { lang: string; dict: Dictionary }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link href={`/${lang}`} className="text-2xl font-bold">
-              Logo
+            <Link href={`/${lang}`} className="text-xl font-bold">
+              Last - but not least
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">
