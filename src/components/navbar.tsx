@@ -51,8 +51,10 @@ export function Navbar({ lang, dict }: { lang: string; dict: Dictionary }) {
             ))}
           </nav>
           <div className="flex items-center space-x-4">
-            <LocaleSwitcher />
-            <ModeToggle dictionary={dict.theme} />
+            <div className="hidden md:flex space-x-4">
+              <LocaleSwitcher />
+              <ModeToggle dictionary={dict.theme} />
+            </div>
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -67,6 +69,10 @@ export function Navbar({ lang, dict }: { lang: string; dict: Dictionary }) {
               <SheetContent side="right">
                 <SheetHeader>
                   <SheetTitle>{dict.nav.menu}</SheetTitle>
+                  <div className="flex items-center justify-center space-x-4 mt-4">
+                    <LocaleSwitcher />
+                    <ModeToggle dictionary={dict.theme} />
+                  </div>
                 </SheetHeader>
                 <nav className="flex flex-col space-y-4 mt-4">
                   {routes.map((route) => (
