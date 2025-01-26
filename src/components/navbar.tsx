@@ -32,7 +32,7 @@ export function Navbar({ lang, dict }: { lang: string; dict: Dictionary }) {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href={`/${lang}`} className="text-xl font-bold">
-              Last - but not least
+              Ganbaru Creations
             </Link>
           </div>
           <nav className="hidden md:flex space-x-8">

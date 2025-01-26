@@ -11,7 +11,7 @@ export default async function Blog({
 }) {
   const lang = (await params).lang;
   const dict = await getDictionary(lang);
-  const fileData = await fs.promises.readFile("public/README.md", "utf-8");
+  const fileData = await fs.promises.readFile("public/1_welcome.md", "utf-8");
   const { content, frontmatter } = await compileMDX<{ title: string }>({
     source: fileData,
     options: {
@@ -30,9 +30,7 @@ export default async function Blog({
       <p className="text-xl">{dict.blog.description}</p>
       <article className="prose prose-invert">
         {frontmatter.title && (
-          <h1 className="text-4xl font-semibold mb-2 underline">
-            {frontmatter.title}
-          </h1>
+          <h1 className="text-4xl font-semibold mb-2">{frontmatter.title}</h1>
         )}
         <div className="space-y-6">{content}</div>
       </article>

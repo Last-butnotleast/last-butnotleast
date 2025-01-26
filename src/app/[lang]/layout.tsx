@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Last - but not least",
-  description: "This is me. Last but not least.",
+  title: "Ganbaru Creations",
+  description: "This is me and my 1000 ideas.",
 };
 
 export async function generateStaticParams() {

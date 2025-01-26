@@ -38,12 +38,12 @@ export default function Hero({ dictionary }: HeroProps) {
           className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4"
         >
           <Button asChild size="lg">
-            <Link href="/blog">
+            <Link href="/projects">
               {dictionary.cta} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline">
-            <Link href="/projects">{dictionary.secondaryCta}</Link>
+            <Link href="/blog">{dictionary.secondaryCta}</Link>
           </Button>
         </motion.div>
       </div>
